@@ -1,0 +1,12 @@
+C:\Users\alaa\source\WinForms\PizzaProject\bin\Debug\resources\pictures-of-pizza-23-1.jpg
+C:\Users\alaa\source\WinForms\PizzaProject\bin\Debug\PizzaProject.exe.config
+C:\Users\alaa\source\WinForms\PizzaProject\bin\Debug\PizzaProject.exe
+C:\Users\alaa\source\WinForms\PizzaProject\bin\Debug\PizzaProject.pdb
+C:\Users\alaa\source\WinForms\PizzaProject\obj\Debug\PizzaProject.csproj.AssemblyReference.cache
+C:\Users\alaa\source\WinForms\PizzaProject\obj\Debug\PizzaProject.frmLogin.resources
+C:\Users\alaa\source\WinForms\PizzaProject\obj\Debug\PizzaProject.Properties.Resources.resources
+C:\Users\alaa\source\WinForms\PizzaProject\obj\Debug\PizzaProject.csproj.GenerateResource.cache
+C:\Users\alaa\source\WinForms\PizzaProject\obj\Debug\PizzaProject.csproj.CoreCompileInputs.cache
+C:\Users\alaa\source\WinForms\PizzaProject\obj\Debug\PizzaProject.exe
+C:\Users\alaa\source\WinForms\PizzaProject\obj\Debug\PizzaProject.pdb
+C:\Users\alaa\source\WinForms\PizzaProject\obj\Debug\PizzaProject.frmPizzaOrder.resources
