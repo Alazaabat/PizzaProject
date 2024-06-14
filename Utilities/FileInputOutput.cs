@@ -49,12 +49,14 @@ namespace PizzaProject.Utilities
             }
             return result;
         }
-        public static void WriteObject(FileStream file,object o)
+        public static void WriteObject(FileStream file,object obj)
         {
-            if (o is null)
+            if (obj is null)
                 return;
+
+
             IFormatter formatter = new BinaryFormatter();
-            formatter.Serialize(file,o);
+            formatter.Serialize(file,obj);
 
         }
 

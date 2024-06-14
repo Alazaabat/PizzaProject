@@ -58,7 +58,7 @@ namespace PizzaProject
                 if (topping == PizzaToppings.None)
                     continue;
                 if((pizzaToppings & topping) == topping)
-                    stringBuilder.Append(topping.ToString()+" , ");
+                    stringBuilder.Append(topping.ToString()+",");
             }
             return stringBuilder.ToString(0, stringBuilder.Length - 2);
         }
