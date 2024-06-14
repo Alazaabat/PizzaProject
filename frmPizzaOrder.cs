@@ -73,6 +73,7 @@ namespace PizzaProject
             
             int addition=Utility.PizzaSizeToInt(PizzaSize.Small);
             AddToTotal(rbSmallSize.Checked,addition);
+
             lblResultSize.Text = "Small";
 
         }
