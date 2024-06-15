@@ -58,7 +58,7 @@ namespace PizzaProject
                 if (topping == PizzaToppings.None)
                     continue;
                 if((pizzaToppings & topping) == topping)
-                    stringBuilder.Append(topping.ToString()+",");
+                    stringBuilder.Append(topping.ToString()+" , ");
             }
             return stringBuilder.ToString(0, stringBuilder.Length - 2);
         }
@@ -200,9 +200,7 @@ namespace PizzaProject
         private void frmPizzaOrder_Load(object sender, EventArgs e)
         {
             this.InitLists();
-            this.rbOnTable.Checked = true;
-            this.rbSmallSize.Checked = true;
-            this.rbThinCrust.Checked = true;
+            btnRestForm_Click(sender, e);
         }
 
         private void lblOrder_Click(object sender, EventArgs e)
