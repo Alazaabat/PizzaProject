@@ -65,6 +65,7 @@ namespace PizzaProject
             this.rbMediumSize = new System.Windows.Forms.RadioButton();
             this.rbSmallSize = new System.Windows.Forms.RadioButton();
             this.gbOrderSummary = new System.Windows.Forms.GroupBox();
+            this.lblResultTotalOfPizzas = new System.Windows.Forms.Label();
             this.lblResultToppings = new System.Windows.Forms.TextBox();
             this.lblResultEatPlace = new System.Windows.Forms.Label();
             this.lblResultCrust = new System.Windows.Forms.Label();
@@ -92,11 +93,14 @@ namespace PizzaProject
             this.lblPizzaMake = new System.Windows.Forms.Label();
             this.lblOrder = new System.Windows.Forms.Button();
             this.btnRestForm = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.gbPizzaSize.SuspendLayout();
             this.gbOrderSummary.SuspendLayout();
             this.gbPizzaOrderPlace.SuspendLayout();
             this.gbToppings.SuspendLayout();
             this.gbCrustType.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
             // gbPizzaSize
@@ -107,7 +111,7 @@ namespace PizzaProject
             this.gbPizzaSize.Controls.Add(this.rbSmallSize);
             this.gbPizzaSize.Font = new System.Drawing.Font("Segoe Print", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbPizzaSize.ForeColor = System.Drawing.Color.Orange;
-            this.gbPizzaSize.Location = new System.Drawing.Point(235, 179);
+            this.gbPizzaSize.Location = new System.Drawing.Point(253, 206);
             this.gbPizzaSize.Name = "gbPizzaSize";
             this.gbPizzaSize.Size = new System.Drawing.Size(215, 176);
             this.gbPizzaSize.TabIndex = 0;
@@ -153,6 +157,7 @@ namespace PizzaProject
             // gbOrderSummary
             // 
             this.gbOrderSummary.BackColor = System.Drawing.Color.Transparent;
+            this.gbOrderSummary.Controls.Add(this.lblResultTotalOfPizzas);
             this.gbOrderSummary.Controls.Add(this.lblResultToppings);
             this.gbOrderSummary.Controls.Add(this.lblResultEatPlace);
             this.gbOrderSummary.Controls.Add(this.lblResultCrust);
@@ -167,10 +172,21 @@ namespace PizzaProject
             this.gbOrderSummary.ForeColor = System.Drawing.Color.Orange;
             this.gbOrderSummary.Location = new System.Drawing.Point(983, 60);
             this.gbOrderSummary.Name = "gbOrderSummary";
-            this.gbOrderSummary.Size = new System.Drawing.Size(217, 539);
+            this.gbOrderSummary.Size = new System.Drawing.Size(217, 622);
             this.gbOrderSummary.TabIndex = 4;
             this.gbOrderSummary.TabStop = false;
             this.gbOrderSummary.Text = "Order Summary";
+            // 
+            // lblResultTotalOfPizzas
+            // 
+            this.lblResultTotalOfPizzas.AutoSize = true;
+            this.lblResultTotalOfPizzas.Font = new System.Drawing.Font("Segoe Print", 20F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblResultTotalOfPizzas.ForeColor = System.Drawing.Color.White;
+            this.lblResultTotalOfPizzas.Location = new System.Drawing.Point(57, 480);
+            this.lblResultTotalOfPizzas.Name = "lblResultTotalOfPizzas";
+            this.lblResultTotalOfPizzas.Size = new System.Drawing.Size(81, 71);
+            this.lblResultTotalOfPizzas.TabIndex = 10;
+            this.lblResultTotalOfPizzas.Text = "0$";
             // 
             // lblResultToppings
             // 
@@ -221,12 +237,13 @@ namespace PizzaProject
             // 
             this.lblResultTotal.AutoSize = true;
             this.lblResultTotal.Font = new System.Drawing.Font("Segoe Print", 20F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblResultTotal.ForeColor = System.Drawing.Color.Orange;
-            this.lblResultTotal.Location = new System.Drawing.Point(89, 438);
+            this.lblResultTotal.ForeColor = System.Drawing.Color.White;
+            this.lblResultTotal.Location = new System.Drawing.Point(47, 467);
             this.lblResultTotal.Name = "lblResultTotal";
             this.lblResultTotal.Size = new System.Drawing.Size(81, 71);
             this.lblResultTotal.TabIndex = 5;
             this.lblResultTotal.Text = "0$";
+            this.lblResultTotal.TextChanged += new System.EventHandler(this.lblResultTotal_TextChanged);
             // 
             // lblTotalPrice
             // 
@@ -290,7 +307,7 @@ namespace PizzaProject
             this.gbPizzaOrderPlace.Controls.Add(this.rbOnTable);
             this.gbPizzaOrderPlace.Font = new System.Drawing.Font("Segoe Print", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.gbPizzaOrderPlace.ForeColor = System.Drawing.Color.Orange;
-            this.gbPizzaOrderPlace.Location = new System.Drawing.Point(534, 361);
+            this.gbPizzaOrderPlace.Location = new System.Drawing.Point(534, 397);
             this.gbPizzaOrderPlace.Name = "gbPizzaOrderPlace";
             this.gbPizzaOrderPlace.Size = new System.Drawing.Size(364, 167);
             this.gbPizzaOrderPlace.TabIndex = 3;
@@ -332,7 +349,7 @@ namespace PizzaProject
             this.gbToppings.Controls.Add(this.chkExtraCheese);
             this.gbToppings.Font = new System.Drawing.Font("Segoe Print", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.gbToppings.ForeColor = System.Drawing.Color.Orange;
-            this.gbToppings.Location = new System.Drawing.Point(534, 159);
+            this.gbToppings.Location = new System.Drawing.Point(534, 186);
             this.gbToppings.Name = "gbToppings";
             this.gbToppings.Size = new System.Drawing.Size(364, 196);
             this.gbToppings.TabIndex = 2;
@@ -419,7 +436,7 @@ namespace PizzaProject
             this.gbCrustType.Controls.Add(this.rbThinCrust);
             this.gbCrustType.Font = new System.Drawing.Font("Segoe Print", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.gbCrustType.ForeColor = System.Drawing.Color.Orange;
-            this.gbCrustType.Location = new System.Drawing.Point(235, 361);
+            this.gbCrustType.Location = new System.Drawing.Point(253, 397);
             this.gbCrustType.Name = "gbCrustType";
             this.gbCrustType.Size = new System.Drawing.Size(215, 167);
             this.gbCrustType.TabIndex = 1;
@@ -479,7 +496,7 @@ namespace PizzaProject
             // lblOrder
             // 
             this.lblOrder.Font = new System.Drawing.Font("Segoe Print", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.lblOrder.Location = new System.Drawing.Point(279, 534);
+            this.lblOrder.Location = new System.Drawing.Point(275, 616);
             this.lblOrder.Name = "lblOrder";
             this.lblOrder.Size = new System.Drawing.Size(119, 53);
             this.lblOrder.TabIndex = 6;
@@ -490,7 +507,7 @@ namespace PizzaProject
             // btnRestForm
             // 
             this.btnRestForm.Font = new System.Drawing.Font("Segoe Print", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.btnRestForm.Location = new System.Drawing.Point(569, 534);
+            this.btnRestForm.Location = new System.Drawing.Point(779, 616);
             this.btnRestForm.Name = "btnRestForm";
             this.btnRestForm.Size = new System.Drawing.Size(119, 53);
             this.btnRestForm.TabIndex = 7;
@@ -498,13 +515,36 @@ namespace PizzaProject
             this.btnRestForm.UseVisualStyleBackColor = true;
             this.btnRestForm.Click += new System.EventHandler(this.btnRestForm_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Segoe Print", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Orange;
+            this.label1.Location = new System.Drawing.Point(410, 625);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(169, 35);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Pizza Number: ";
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numericUpDown1.Location = new System.Drawing.Point(583, 619);
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(142, 41);
+            this.numericUpDown1.TabIndex = 9;
+            this.numericUpDown1.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
+            // 
             // frmPizzaOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::PizzaProject.Properties.Resources.download1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1212, 611);
+            this.ClientSize = new System.Drawing.Size(1212, 681);
+            this.Controls.Add(this.numericUpDown1);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnRestForm);
             this.Controls.Add(this.lblOrder);
             this.Controls.Add(this.lblPizzaMake);
@@ -527,6 +567,7 @@ namespace PizzaProject
             this.gbToppings.PerformLayout();
             this.gbCrustType.ResumeLayout(false);
             this.gbCrustType.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -566,6 +607,10 @@ namespace PizzaProject
         private System.Windows.Forms.Label lblResultCrust;
         private System.Windows.Forms.Label lblResultSize;
         private System.Windows.Forms.TextBox lblResultToppings;
+        private Label label1;
+        private NumericUpDown numericUpDown1;
+        private int pizzaPrice;
+        private Label lblResultTotalOfPizzas;
     }
 }
 

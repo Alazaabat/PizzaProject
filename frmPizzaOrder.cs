@@ -30,6 +30,7 @@ namespace PizzaProject
             this.eatPlaceRadioButtons = new List<RadioButton>();
             this.groupBoxes = new List<GroupBox>();
             InitializeComponent();
+            this.lblResultTotal.Hide();
         }
         private void AddToTotal(bool isChecked,int addition)
         {
@@ -38,7 +39,6 @@ namespace PizzaProject
            
             Utility.AddPriceToTotal(this.lblResultTotal, addition);
         }
-     
         private void UpdatePizzaToppings(bool isChecked ,PizzaToppings topping)
         {
             if (isChecked)
@@ -201,6 +201,8 @@ namespace PizzaProject
         {
             this.InitLists();
             btnRestForm_Click(sender, e);
+            this.numericUpDown1.Maximum = 10;
+            this.numericUpDown1.Minimum = 1;
         }
 
         private void lblOrder_Click(object sender, EventArgs e)
@@ -208,6 +210,22 @@ namespace PizzaProject
             Utility.SetEnableGroupBoxes(groupBoxes, false);
             MessageBox.Show("Order Done Successfully :) ", "Order Datails", MessageBoxButtons.OK
                            , MessageBoxIcon.Information);
+        }
+
+        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+        {
+           
+            int pizzasTotalPrice = pizzaPrice * (int)numericUpDown1.Value;
+            this.lblResultTotalOfPizzas.Text = pizzasTotalPrice.ToString()+"$";
+        }
+
+        private void lblResultTotal_TextChanged(object sender, EventArgs e)
+        {
+            bool isDone = int.TryParse
+              (this.lblResultTotal.Text.Substring(0, this.lblResultTotal.Text.Length - 1),out pizzaPrice);
+            if (!isDone)
+                return;
+            this.lblResultTotalOfPizzas.Text = pizzaPrice.ToString()+"$";
         }
     }
 }
